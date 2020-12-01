@@ -1,0 +1,12 @@
+{
+  "name": "apptest",
+  "authors": [
+    "Hanh Cao <hcao@aledade.com>"
+  ],
+  "description": "A simple App Test application",
+  "dependencies": {
+    "jquery": "3.5.x",
+    "bootstrap": "4.5.x",
+    "jquery-ui": "1.12.x"
+  }
+}

@@ -1,0 +1,6 @@
+venv
+app/static/gen/
+app/static/.webassets-cache/
+app/static/bower_components/
+*.db
+migrations

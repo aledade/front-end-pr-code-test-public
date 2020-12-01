@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+
+  <title>TEST</title>
+  {% assets "base_css" %}
+    <link href="{{ ASSET_URL }}" rel="stylesheet">
+  {% endassets %}
+  {% assets "main_js" %}
+    <script src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+</head>
+<body>
+  <header></header>
+  <div class="container" id="main-block">
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
+</html>
