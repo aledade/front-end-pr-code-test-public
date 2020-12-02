@@ -15,9 +15,11 @@
 </head>
 <body>
   <header></header>
+  <div class="alert alert-success" id="successAlert" role="alert" style="display:none;"></div>
   <div class="container" id="main-block">
     {% block content %}
     {% endblock %}
   </div>
+  <div id="loader"></div>
 </body>
 </html>

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="UserTitle">{{ user.first_name }} {{ user.last_name }}</h1>
+
+<div>
+    <h4 class="UserSubTitle">My Pets</h4>
+    <div class="UserPets">
+        {% for pet in pets %}
+            <div class="UserPets__Tile" data-id="{{ pet.id }}">
+                <img class="UserPets__Icon" src="/static/img/svg-placeholder.svg">
+                <h5>{{ pet.name }}</h5>
+                <p class="text-left">
+                    <span class="font-weight-bold">Breed:</span> {{ pet.breed }} <br/>
+                    <span class="font-weight-bold">Birthday:</span> {{ pet.birthday }}
+                </p>
+                <a class="btn btn-outline-primary" href="/users/{{ user.id }}/pets/{{ pet.id }}">Details</a>
+            </div>
+        {% endfor %}
+        <div class="UserPets__Tile UserPets__Tile_clickable" data-toggle="modal" data-target="#addPetModal">
+            <span class="UserPets__Icon">+</span>
+            <p>Add a New Pet</p>
+        </div>
+    </div>
+</div>
+{% with user_id=user.id %}
+    {% include 'add_pet_modal.html' %}
+{% endwith %}
+{% endblock  %}

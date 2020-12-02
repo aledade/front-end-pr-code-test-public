@@ -1,0 +1,25 @@
+<div id="editAppointmentModal" class="modal fade" tabindex="-1">
+ <div class="modal-dialog">
+    <form method="post" id="editAppointmentForm">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">Edit/Add Appointment</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="md-form mb-3">
+                    <label data-error="wrong" data-success="right" for="field-appt">Appointment Date</label>
+                    <input type="date" id="field-appt" class="form-control validate" name="appointmentDate">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+
+        </div>
+    </form>
+  </div>
+</div>

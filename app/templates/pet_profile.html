@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% set vaccines = pet_info.vaccines %}
+  <div class="row">
+      <div class="col-sm-3 PetProfile__LeftPanel">
+          <img class="PetImage" src="/static/img/image-placeholder.jpg">
+          <h4 class="PetSubTitle">{{ pet_info.name }}</h4>
+          <p>
+              <span class="font-weight-bold">Born:</span> {{ pet_info.birthday }}<br/>
+              <span class="font-weight-bold">Age:</span> {{ pet_info.age }}<br/>
+              <span class="font-weight-bold">Weight:</span> {{ pet_info.size }} lbs
+          </p>
+          <a class="btn btn-outline-primary" href="/users/{{ pet_info.user_id }}">My Account</a>
+      </div>
+      <div class="col-sm-9">
+          {% if vaccines %}
+              <h5 class="PetSubTitle">Vaccines History</h5>
+              <table class="table table-striped">
+                  <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Date Given</th>
+                        <th scope="col">Vaccine Name</th>
+                        <th scope="col">Date Due</th>
+                        <th scope="col">Scheduled Appointment</th>
+                        <th scope="col">Edit Appointment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for vaccine in vaccines %}
+                    <tr>
+                        <td>{{ vaccine.date_given }}</td>
+                        <td>{{ vaccine.name }}</td>
+                        <td>{{ vaccine.date_due }}</td>
+                        <td>{{ vaccine.scheduled_appointment }}</td>
+                        <td>
+                        {% if not vaccine.completed %}
+                            <button class="btn btn-outline-info"
+                                    id="openAppointmentModal"
+                                    data-toggle="modal" data-target="#editAppointmentModal"
+                                    data-vaccine-id="{{ vaccine.id }}"
+                            >
+                                Edit
+                            </button>
+                        {% endif %}
+                        </td>
+                    </tr>
+                    {%  endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+      </div>
+  </div>
+  {% include 'edit_appointment_modal.html' %}
+{% endblock %}

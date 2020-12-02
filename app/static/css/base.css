@@ -6,3 +6,68 @@ header {
     padding: 3rem 0;
     color: #3d3b3b;
 }
+
+#loader {
+  position: absolute;
+  display: none;
+  z-index: 10000;
+  left: 50%;
+  top: 50%;
+  border: 1rem solid #f3f3f3;
+  border-top: 1rem solid #0484c3;
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.UserTitle {
+    margin-bottom: 3rem;
+}
+.UserPets {
+    display: flex;
+    flex-direction: row;
+}
+.UserSubTitle {
+    margin-bottom: 2rem;
+}
+.UserPets__Tile {
+    padding: 1.5rem;
+    border: 0.1rem solid #a3a7a9;
+    border-radius: 0.3rem;
+    width: 15rem;
+    text-align: center;
+    text-decoration: none;
+    color: #3d3b3b;
+    margin-right: 2rem;
+}
+.UserPets__Tile_clickable {
+    cursor: pointer;
+}
+.UserPets__Tile_clickable:hover {
+    background-color: #eaedef;
+    color: #3d3b3b;
+}
+.UserPets__Icon {
+    width: 4rem;
+    height: 4rem;
+    font-size: 4rem;
+}
+
+/* Pet Profile */
+.PetImage {
+    width: 12rem;
+}
+.PetSubTitle {
+    margin: 1.5rem 0;
+    font-weight: bold;
+}
+.PetProfile__LeftPanel {
+    border-right: 1px solid #e2e0e0;
+}
